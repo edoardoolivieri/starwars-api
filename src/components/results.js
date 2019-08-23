@@ -4,9 +4,11 @@ class Results extends Component{
   render(){
     return(
       <div>
-      <p>{this.props.characters}</p>
-      <p>{this.props.traits}</p>
-      <p>{this.props.films}</p>
+      <p>{this.props.name}</p>
+      <p>{this.props.eye_color}</p>
+      <p>{this.props.hair_color}</p>
+      <p>{this.props.height}</p>
+      <p>{this.props.skin_color}</p>
       </div>
     );
   }

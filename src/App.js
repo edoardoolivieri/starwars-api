@@ -6,9 +6,11 @@ import Results from "./components/results";
 
 class App extends Component{
   state = {
-    characters: undefined,
-    traits: undefined,
-    films: undefined,
+    name: undefined,
+    eye_color: undefined,
+    hair_color: undefined,
+    height: undefined,
+    skin_color: undefined,
   }
 
   getStarWars = async (e) => {
@@ -16,22 +18,28 @@ class App extends Component{
     const search = e.target.elements.search.value;
     const api_call = await fetch(`https://swapi.co/api/people/?search=${search}`);
     const data = await api_call.json();
-    console.log(data);
-    this.setState({
-      characters: data.results[0].name,
-      traits: data.results[0].eye_color,
-      films: data.results[0].films,
-    })
+    if (search){
+      console.log(data);
+      this.setState({
+        name: data.results[0].name,
+        eye_color: data.results[0].eye_color,
+        hair_color: data.results[0].hair_color,
+        height: data.results[0].height,
+        skin_color: data.results[0].skin_color,
+      })
+    }
   }
   render(){
     return(
       <div>
         <Titles />
-        <Search getStarWars={this.getStarWars}/>
+        <Search getStarWars={this.getStarWars} onChange={this.handleUpdate}/>
         <Results
-          characters={this.state.characters}
-          traits={this.state.traits}
-          films={this.state.films}
+          name={this.state.name}
+          eye_color={this.state.eye_color}
+          hair_color={this.state.hair_color}
+          height={this.state.height}
+          skin_color={this.state.skin_color}
         />
       </div>
     );
