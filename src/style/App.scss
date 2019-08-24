@@ -9,3 +9,17 @@ $color: #5a3921;
 body{
   font-family: 'Exo 2', sans-serif;
 }
+
+.card{
+  width: 500px;
+  height: 300px;
+  text-align: center;
+  color:$color;
+}
+
+.card-body{
+  letter-spacing: 2px;
+  h5{
+    margin-bottom: 15px;
+  }
+}
