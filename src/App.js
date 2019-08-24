@@ -33,7 +33,7 @@ class App extends Component{
     return(
       <div>
         <Titles />
-        <Search getStarWars={this.getStarWars} onChange={this.handleUpdate}/>
+        <Search getStarWars={this.getStarWars}/>
         <Results
           name={this.state.name}
           eye_color={this.state.eye_color}
