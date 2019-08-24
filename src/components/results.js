@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Card from 'react-bootstrap/Card';
 
 const Resultspeople = styled.div`
   display: flex;
@@ -12,12 +13,20 @@ class Results extends Component{
   render(){
     return(
       <Resultspeople>
-        {this.props.name && <p>Name: {this.props.name}</p>}
-        {this.props.eye_color &&<p>Eye Color: {this.props.eye_color}</p>}
-        {this.props.hair_color &&<p>Hair Color: {this.props.hair_color}</p>}
-        {this.props.height &&<p>Height: {this.props.height}cm</p>}
-        {this.props.skin_color &&<p>Skin Color: {this.props.skin_color}</p>}
-        {this.props.error &&<p>Error! {this.props.error}</p>}
+
+        <Card bg="dark" text="white" style={{ width: '18rem' }}>
+            <Card.Header>{this.props.name && <h2>{this.props.name}</h2>}</Card.Header>
+            <Card.Body>
+              <Card.Text>
+                {this.props.eye_color &&<h5>Eye Color | {this.props.eye_color}</h5>}
+                {this.props.hair_color &&<h5>Hair Color | {this.props.hair_color}</h5>}
+                {this.props.height &&<h5>Height | {this.props.height}cm</h5>}
+                {this.props.skin_color &&<h5>Skin Color | {this.props.skin_color}</h5>}
+                {this.props.error &&<h3>Error! {this.props.error}</h3>}
+              </Card.Text>
+            </Card.Body>
+        </Card>
+
       </Resultspeople>
     );
   }

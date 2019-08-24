@@ -6,10 +6,11 @@ const Titlediv = styled.div`
   flex-direction: column;
   h1{
     text-align: center;
-    color: $color;
+    margin: 50px;
   }
   p{
     text-align: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   }
 `
 
