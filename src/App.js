@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './style/App.scss';
+
 import Titles from "./components/title";
 import Search from "./components/search";
 import Results from "./components/results";
@@ -11,6 +13,7 @@ class App extends Component{
     hair_color: undefined,
     height: undefined,
     skin_color: undefined,
+    error: undefined
   }
 
   getStarWars = async (e) => {
@@ -26,6 +29,16 @@ class App extends Component{
         hair_color: data.results[0].hair_color,
         height: data.results[0].height,
         skin_color: data.results[0].skin_color,
+        error: ""
+      })
+    } else{
+      this.setState({
+        name: undefined,
+        eye_color: undefined,
+        hair_color: undefined,
+        height: undefined,
+        skin_color: undefined,
+        error: "Please enter a valid StarWars name."
       })
     }
   }
@@ -40,6 +53,7 @@ class App extends Component{
           hair_color={this.state.hair_color}
           height={this.state.height}
           skin_color={this.state.skin_color}
+          error={this.state.error}
         />
       </div>
     );

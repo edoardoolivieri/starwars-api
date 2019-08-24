@@ -6,6 +6,7 @@ const Titlediv = styled.div`
   flex-direction: column;
   h1{
     text-align: center;
+    color: $color;
   }
   p{
     text-align: center;

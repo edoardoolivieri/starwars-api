@@ -1,0 +1,24 @@
+input{
+  width: 100% !important;
+  padding: 10px !important;
+  border-radius: 5px !important;
+  border: 1px solid black !important;
+}
+
+.form{
+  display: flex;
+  width: 100%;
+  margin: 60px;
+}
+
+.button{
+  background-color: transparent;
+  border: 0px;
+  transition: all 0.5s;
+  font-weight: bold;
+}
+
+.button:hover{
+  color: $color;
+  font-size: 20px;
+}

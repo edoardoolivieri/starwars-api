@@ -1,4 +1,11 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
+const Searchform = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%
+`
 
 class Search extends Component{
   constructor(props) {
@@ -18,14 +25,14 @@ class Search extends Component{
   };
   render(){
     return(
-      <div>
-        <form onSubmit={this.props.getStarWars}>
-          <input type="text" name="search" placeholder="City" />
-          <button>
+      <Searchform>
+        <form onSubmit={this.props.getStarWars} className="form">
+          <input type="text" name="search" placeholder="......" className="form-input"/>
+          <button className="button">
             search
           </button>
         </form>
-      </div>
+      </Searchform>
     );
   }
 }
