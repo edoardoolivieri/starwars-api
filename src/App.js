@@ -22,7 +22,6 @@ class App extends Component{
     const api_call = await fetch(`https://swapi.co/api/people/?search=${search}`);
     const data = await api_call.json();
     if (search){
-      console.log(data);
       this.setState({
         name: data.results[0].name,
         eye_color: data.results[0].eye_color,
